@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-strong: #ffffff;
+  --border: #e5e7eb;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --primary-soft: #eff6ff;
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.app-sider {
+  background: #fff !important;
+  border-right: 1px solid var(--border);
+}
+
+.app-main {
+  background: transparent;
+}
+
+.content-surface {
+  min-height: 100vh;
+  padding: 28px;
+}
+
+.brand-panel {
+  padding: 24px 18px 18px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: var(--primary);
+  border-radius: 14px;
+  background: var(--primary-soft);
+}
+
+.brand-title {
+  display: block;
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+}
+
+.app-menu {
+  padding: 0 12px;
+}
+
+.app-menu .n-menu-item-content {
+  border-radius: 13px;
+  margin: 3px 0;
+}
+
+.page-header {
+  margin-bottom: 22px;
+  padding: 4px 2px;
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.dashboard-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 28px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.dashboard-hero h1 {
+  margin: 0 0 10px;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.dashboard-hero p {
+  max-width: 640px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.stat-card .value {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+}
+
+.stat-card .label {
+  margin-top: 6px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.relation-graph {
+  width: 100%;
+  height: 480px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.editor-area {
+  min-height: 300px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 18px;
+  padding: 18px 20px;
+  background: #fff;
+}
+
+.editor-area .ProseMirror {
+  outline: none;
+  min-height: 260px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #111827;
+}
+
+.n-card {
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.n-data-table {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .content-surface {
+    padding: 18px;
+  }
+
+  .dashboard-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

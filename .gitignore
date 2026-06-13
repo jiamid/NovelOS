@@ -147,6 +147,13 @@ activemq-data/
 # SageMath parsed files
 *.sage.py
 
+# NovelOS
+backend/novelos.db
+backend/data/
+backend/.venv/
+frontend/dist/
+frontend/node_modules/
+
 # Environments
 .env
 .envrc
