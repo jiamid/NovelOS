@@ -13,6 +13,7 @@ from app.services.character_service import search_character
 from app.services.chapter_service import chapter_to_dict, save_chapter_content
 from app.services.event_service import event_to_timeline_dict
 from app.services.story_context import get_story_context
+from app.services.writing_rules import get_writing_rules
 from app.utils.serialization import character_to_dict
 
 
@@ -28,6 +29,12 @@ def handle_get_story_context(db: Session, arguments: dict) -> dict:
         chapter_id=arguments.get("chapter_id"),
     )
     log_mcp_call(db, "get_story_context", arguments, True, _summary(result))
+    return result
+
+
+def handle_get_writing_rules(db: Session, arguments: dict) -> dict:
+    result = {"writing_rules": get_writing_rules()}
+    log_mcp_call(db, "get_writing_rules", arguments, True, _summary(result))
     return result
 
 

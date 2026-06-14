@@ -8,6 +8,7 @@ from app.models.event import Event, Timeline
 from app.models.novel import Novel
 from app.services.chapter_service import chapter_to_dict
 from app.services.event_service import event_to_timeline_dict
+from app.services.writing_rules import get_writing_rules
 from app.utils.serialization import character_to_dict
 from app.vector.store import get_vector_store
 
@@ -64,6 +65,7 @@ def get_story_context(db: Session, novel_id: str, chapter_id: str | None = None)
     )
 
     return {
+        "writing_rules": get_writing_rules(),
         "novel": {
             "id": novel.id,
             "name": novel.name,

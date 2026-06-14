@@ -17,7 +17,7 @@ class McpTool:
 MCP_TOOLS: list[McpTool] = [
     McpTool(
         name="get_story_context",
-        description="获取写作上下文：小说信息、章节、人物、关系、时间线与向量检索结果",
+        description="获取写作上下文：写作规则、小说信息、章节、人物、关系、时间线与向量检索结果",
         input_schema={
             "type": "object",
             "properties": {
@@ -27,6 +27,15 @@ MCP_TOOLS: list[McpTool] = [
             "required": ["novel_id"],
         },
         handler=handlers.handle_get_story_context,
+    ),
+    McpTool(
+        name="get_writing_rules",
+        description="获取给 LLM 使用的写作规则与创作约束",
+        input_schema={
+            "type": "object",
+            "properties": {},
+        },
+        handler=handlers.handle_get_writing_rules,
     ),
     McpTool(
         name="get_novel",

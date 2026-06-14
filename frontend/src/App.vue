@@ -13,7 +13,7 @@ import {
   NSpace,
   NText,
 } from 'naive-ui'
-import { BookOutline, GlobeOutline, HardwareChipOutline, HomeOutline } from '@vicons/ionicons5'
+import { BookOutline, DocumentTextOutline, GlobeOutline, HardwareChipOutline, HomeOutline } from '@vicons/ionicons5'
 import { useAppStore } from '@/stores/app'
 
 const route = useRoute()
@@ -52,6 +52,7 @@ const themeOverrides = {
 
 const activeKey = computed(() => {
   if (route.name === 'dashboard') return 'dashboard'
+  if (route.name === 'writing-rules') return 'writing-rules'
   if (route.name === 'mcp') return 'mcp'
   if (route.name === 'novel') return `novel-${route.params.id}`
   if (route.name === 'chapter') return `chapter-${route.params.id}`
@@ -75,6 +76,11 @@ const menuOptions = computed(() => {
       })),
     },
     {
+      label: '写作规则',
+      key: 'writing-rules',
+      icon: () => h(NIcon, null, { default: () => h(DocumentTextOutline) }),
+    },
+    {
       label: 'MCP',
       key: 'mcp',
       icon: () => h(NIcon, null, { default: () => h(HardwareChipOutline) }),
@@ -85,6 +91,7 @@ const menuOptions = computed(() => {
 
 function handleMenuSelect(key: string) {
   if (key === 'dashboard') router.push('/')
+  else if (key === 'writing-rules') router.push('/writing-rules')
   else if (key === 'mcp') router.push('/mcp')
   else if (key.startsWith('novel-')) router.push(`/novel/${key.replace('novel-', '')}`)
 }

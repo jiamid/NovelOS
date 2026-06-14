@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     qdrant_collection: str = "novelos"
     embedding_model: str = "paraphrase-multilingual-MiniLM-L12-v2"
     vector_top_k: int = 10
+    writing_rules_file: str = "data/writing_rules.md"
     cors_origins: list[str] = ["http://localhost:5173", "http://localhost:3000"]
     mcp_api_key: str = ""
     mcp_require_auth: bool = True

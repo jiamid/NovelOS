@@ -100,3 +100,8 @@ export interface McpCallLog {
   error_message?: string
   created_at: string
 }
+
+export interface WritingRules {
+  content: string
+  file_path: string
+}

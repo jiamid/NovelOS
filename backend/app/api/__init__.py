@@ -8,6 +8,7 @@ from app.api import (
     mcp_log,
     novel,
     timeline,
+    writing_rules,
 )
 
 api_router = APIRouter(prefix="/api")
@@ -18,3 +19,4 @@ api_router.include_router(event.router)
 api_router.include_router(timeline.router)
 api_router.include_router(dashboard.router)
 api_router.include_router(mcp_log.router)
+api_router.include_router(writing_rules.router)

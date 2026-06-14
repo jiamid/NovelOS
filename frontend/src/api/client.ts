@@ -10,6 +10,7 @@ import type {
   Novel,
   Paginated,
   TimelineItem,
+  WritingRules,
 } from '@/types'
 
 const api = axios.create({ baseURL: '/api' })
@@ -99,4 +100,10 @@ export const mcpApi = {
   regenerateApiKey: () => api.post<{ api_key: string }>('/mcp/api-key/regenerate').then((r) => r.data),
   logs: (page = 1) =>
     api.get<Paginated<McpCallLog>>('/mcp/logs', { params: { page } }).then((r) => r.data),
+}
+
+export const writingRulesApi = {
+  get: () => api.get<WritingRules>('/writing-rules').then((r) => r.data),
+  update: (content: string) =>
+    api.put<WritingRules>('/writing-rules', { content }).then((r) => r.data),
 }
